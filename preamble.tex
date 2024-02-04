@@ -1,0 +1,175 @@
+% File name: preamble.tex
+% Author: Shavak Sinanan <shavak@gmail.com>
+% Description: Preamble for mathematical articles.
+
+% Packages
+\usepackage[round,sort]{natbib}
+\bibliographystyle{authordate1}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{amsthm}
+\usepackage{amsmath}% American Mathematical Society macros - essential!
+\usepackage{amssymb}% contains amsfonts
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{commath}
+\usepackage{isomath}
+\usepackage{upgreek}
+\usepackage{mathabx}
+\usepackage{xfrac}
+\usepackage{accents}
+\usepackage[integrals]{wasysym}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[all]{xy}
+\usepackage[nodayofweek]{datetime}% change the format of printed dates (no american style!)
+\usepackage[obeyFinal]{todonotes}
+
+\usepackage[pdftex,colorlinks]{hyperref}% creates hypertext links in pdf files (natbib compatible)
+
+% Date and Time format
+\newdateformat{yyyydate}{\THEYEAR}
+\newdateformat{yydate}{\THEYEAR}
+
+% Operators
+\DeclareMathOperator{\Sym}{Sym}% symmetric group
+\DeclareMathOperator{\Alt}{Alt}% alternating group
+\DeclareMathOperator{\Aut}{Aut}% automorphism group
+\DeclareMathOperator{\End}{End}% endomorphism group
+\DeclareMathOperator{\Hom}{Hom}% homomorphism group
+\DeclareMathOperator{\Ran}{Ran}% range
+\DeclareMathOperator{\Dom}{Dom}% domain
+\DeclareMathOperator{\Codom}{Codom}% codomain
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\tr}{tr}% trace
+\DeclareMathOperator{\GL}{GL}% general linear group
+\DeclareMathOperator{\SL}{SL}% special linear group
+\DeclareMathOperator{\PGL}{PGL}% projective general linear group
+\DeclareMathOperator{\PSL}{PSL}% projective special linear group
+\DeclareMathOperator{\GU}{GU}% general unitary group
+\DeclareMathOperator{\SU}{SU}% special unitary group
+\DeclareMathOperator{\PGU}{PGU}% projective general unitary group
+\DeclareMathOperator{\PSU}{PSU}% projective special unitary group
+\DeclareMathOperator{\AGL}{AGL}% affine general linear group
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Grp}{Grp}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Bd}{Bd}
+\DeclareMathOperator{\Unif}{Unif}
+\DeclareMathOperator{\Bern}{Bern}
+\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\prob}{\mathbf{P}}
+\DeclareMathOperator{\expect}{\mathbf{E}}
+\DeclareMathOperator{\Var}{\mathbf{Var}}
+\DeclareMathOperator{\Cov}{\mathbf{Cov}}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\fix}{fix}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\dep}{dep}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\vol}{vol}
+
+% Symbols and constants
+\newcommand{\nat}{\ensuremath{\mathbb{N}}}% natural numbers
+\newcommand{\zed}{\ensuremath{\mathbb{Z}}}% integers
+\newcommand{\rat}{\ensuremath{\mathbb{Q}}}% rationals
+\newcommand{\real}{\ensuremath{\mathbb{R}}}% real numbers
+\newcommand{\complex}{\ensuremath{\mathbb{C}}}% complex numbers
+\newcommand{\field}{\ensuremath{\mathbb{F}}}% field
+\newcommand{\indicator}{\ensuremath{\mathbb{I}}}% indicator
+\newcommand{\rie}{\ensuremath{\mathscr{R}}}% Riemann integrable
+\newcommand{\circlegroup}{\ensuremath{\mathbb{T}}}% unit circle
+\newcommand{\jacobian}{\ensuremath{\mathbf{J}}}
+\newcommand{\hessian}{\ensuremath{\mathbf{H}}}
+\newcommand{\lowint}{\underline{\int}}
+\newcommand{\upint}{\overline{\int}}
+\newcommand{\mathup}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\ramuno}{\ensuremath{\mathup{i}}}
+\newcommand{\euler}{\ensuremath{\mathup{e}}}
+\newcommand{\cpi}{\ensuremath{\uppi}}
+\newcommand{\given}{\ensuremath{\left.\middle|\right.}}
+\renewcommand{\vec}{\vectorsym}
+\newcommand{\dotprod}{\cdotp}
+
+% Hyphenation fixes
+\newcommand{\letdash}[1]{$#1$\nobreakdash-\hspace{0pt}}% for n-element, k-transitive etc
+\newcommand{\numdash}{\nobreakdash--}
+
+% Theorems
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem*{rank-nullity}{The Rank--Nullity Theorem}
+\newtheorem*{cayley-hamilton}{The Cayley--Hamilton Theorem}
+\newtheorem*{cauchy-schwarz}{The Cauchy--Schwarz Inequality}
+\newtheorem*{cramer}{Cramer's Rule}
+\newtheorem*{nested-interval}{The Nested Interval Theorem}
+\newtheorem*{heine-borel}{The Heine--Borel Theorem}
+\newtheorem*{brouwer-fixed-point}{Brouwer's Fixed Point Theorem}
+\newtheorem*{bolzano-weierstrass}{The Bolzano--Weierstrass Theorem}
+\newtheorem*{monotone-sequence}{The Monotone Sequence Theorem}
+\newtheorem*{monotone-convergence}{The Monotone Convergence Theorem}
+\newtheorem*{l-hopital}{L'H\^opital's Rule}
+\newtheorem*{comparison-test}{The Comparison Test}
+\newtheorem*{condensation-test}{Cauchy's Condensation Test}
+\newtheorem*{root-test}{The Root Test}
+\newtheorem*{ratio-test}{d'Alembert's Ratio Test}
+\newtheorem*{integral-test}{The Integral Test}
+\newtheorem*{weierstrass-m}{Weierstrass M-test}
+\newtheorem*{abel-sum}{Abel's Theorem}
+\newtheorem*{evt}{The Extreme-Value Theorem}
+\newtheorem*{epsilon-neighbourhood}{The $\epsilon$-Neighbourhood Theorem}
+\newtheorem*{ivt}{The Intermediate-Value Theorem}
+\newtheorem*{gmvt}{The Generalised Mean-Value Theorem}
+\newtheorem*{mvt}{The Mean-Value Theorem}
+\newtheorem*{rolle}{Rolle's Theorem}
+\newtheorem*{ftoc}{The Fundamental Theorem of Calculus}
+\newtheorem*{chain-rule}{The Chain Rule}
+\newtheorem*{inverse-function}{The Inverse Function Theorem}
+\newtheorem*{caratheodory-extension}{The Carath\'{e}odory Extension Theorem}
+\newtheorem*{fubini}{Fubini's Theorem}
+\newtheorem*{change-of-variable}{Change of Variable}
+\newtheorem*{change-of-variables}{Change of Variables}
+\newtheorem*{integ-by-parts}{Integration by Parts}
+\newtheorem*{taylor}{Taylor's Theorem}
+\newtheorem*{total-probability}{Law of Total Probability}
+\newtheorem*{total-expectation}{Law of Total Expectation}
+\newtheorem*{total-variance}{Law of Total Variance}
+\newtheorem*{bayes}{Bayes' Theorem}
+\newtheorem*{probability-integral-transform}{The Probability Integral Transform}
+\newtheorem*{wna}{Weak No-arbitrage Condition}
+\newtheorem*{sna}{Strong No-arbitrage Condition}
+\newtheorem*{first-derivative-test}{The First Derivative Test}
+\newtheorem*{second-derivative-test}{The Second Derivative Test}
+\newtheorem*{chebychev}{Chebychev's Inequality}
+\newtheorem*{law-of-averages}{The Law of Averages}
+\newtheorem*{weak-lln}{The Weak Law of Large Numbers}
+\newtheorem*{strong-lln}{The Strong Law of Large Numbers}
+\newtheorem*{levy-continuity}{L\'{e}vy's Continuity Theorem}
+\newtheorem*{central-limit}{The Central Limit Theorem}
+
+% Definition style.
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{xca}[theorem]{Exercise}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem*{problem*}{Problem}
+
+% Remark style (roman body text with no added vertical space above or below)
+\theoremstyle{remark}
+\newtheorem{rmk}[theorem]{Remark}
+\newtheorem{eg}[theorem]{Example}
+
+\newenvironment{soln}{\begin{proof}[Solution]}{\end{proof}}
+
+\numberwithin{equation}{section}

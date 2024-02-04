@@ -1,0 +1,74 @@
+\documentclass[a4paper,reqno,12pt]{amsart}
+
+\input{preamble}
+
+\begin{document}
+	
+\title{Solution to the ``Christmas Eve'' Riddle}
+\author{Shavak Sinanan}
+	
+\maketitle
+
+\begin{problem*}
+    Let \(n\) be a positive integer such that \(n + 1\) is divisible by \(24\). Show that then also the sum of the divisors of \(n\) is divisible by \(24\).
+\end{problem*}
+
+\begin{soln}
+    First, more generally, recall that if a positive integer \(n\) has unique prime factorisation
+    \[
+    p_1^{\alpha_1} p_2^{\alpha_2} \dotsb p_k^{\alpha_k}\text{,}
+    \]
+    then the number of divisors of \(n\) is given by
+    \[
+    (\alpha_1 + 1)(\alpha_2 + 1) \dotsb (\alpha_k + 1)\text{.}
+    \]
+    
+    To see this, observe that any divisor of \(n\) must have the form
+    \[
+    p_1^{\beta_1} p_2^{\beta_2} \dotsb p_k^{\beta_k}\text{,}
+    \]
+    where \(0 \leq \beta_j \leq \alpha_j\) for each \(j\). There are therefore \(\alpha_j + 1\) choices for the value of \(\beta_j\), with each different tuple \((\beta_1, \beta_2, \dotsc, \beta_k)\) mapping to a different divisor of \(n\).
+    
+    It follows immediately that
+    \begin{enumerate}[label=\textbf{Fact} \Roman*]
+	\item \label{itm:even_number_divisors} \emph{The number of divisors of a positive integer \(n\) is odd if and only if \(n\) is a perfect square}.
+    \end{enumerate}
+    
+    Note also the following, both of which are trivially checked.
+    \begin{enumerate}[resume,label=\textbf{Fact} \Roman*]
+	\item \label{itm:quadratic_residues_mod3} \emph{The square of an integer can only be congruent to \(0\) or \(1\) modulo \(3\).}\footnote{An integer which appears as a remainder of some square integer modulo a positive integer \(x\) is called a \emph{quadratic residue} of \(x\).}
+	\item \label{itm:quadratic_residues_mod8} \emph{The square of an integer can only be congruent to \(0\), \(1\), or \(4\) modulo \(8\).}
+    \end{enumerate}
+    
+    Now suppose that \(n + 1\) is divisible by \(24\). One has \(n \equiv 2 \pmod 3\), and so \(n\) cannot be a perfect square by \ref{itm:quadratic_residues_mod3}, and must have an even number of divisors by \ref{itm:even_number_divisors}.
+    
+    Let \(1 = d_1 < d_2 < \dotsb < d_m\) be the divisors of \(n\) which do not exceed \(\sqrt{n}\). The divisors of \(n\) can be paired-off and listed as
+    \[
+    d_1, \frac{n}{d_1}, d_2, \frac{n}{d_2},\dotsc, d_m, \frac{n}{d_m}\text{,}  
+    \]
+    and their sum may be written as
+    \[
+    \sum_{j = 1}^m \left(d_j + \frac{n}{d_j}\right)\text{.}
+    \]
+    It is sufficient to prove that each term in the sum above is divisible by \(24\).
+    
+    Let \(d\) be an arbitrary divisor of \(n\) and consider the expression
+    \[
+    d + \frac{n}{d} = \frac{d^2 + n}{d}\text{.}
+    \]
+    Since \(n + 1\) is divisible by \(24\), one must have that \(n\) is co-prime to \(24\), whence so are any of its divisors.
+    
+    Thus, the problem is reduced to proving that the numerator of the expression above is divisible by \(24\).
+    
+    By \ref{itm:quadratic_residues_mod3},  \(d^2\) must be congruent to \(0\) or \(1\) modulo \(3\). The former implies that \(d\) is divisible by \(3\), which is impossible since \(d\) is co-prime to \(24\). Hence, \(d^2 \equiv 1 \pmod{3}\).
+    
+    By \ref{itm:quadratic_residues_mod8}, \(d^2\) must be congruent to \(0\), \(1\), or \(4\) modulo \(8\). Either of \(d^2 \equiv 0 \pmod{8}\) or \(d^2 \equiv 4 \pmod{8}\) implies that \(d\) is even, which is impossible since \(d\) is co-prime to \(24\). Hence, \(d^2 \equiv 1 \pmod{8}\).
+    
+    This shows that \(d^2 \equiv 1 \pmod{24}\), from which it follows easily that
+    \[
+    d^2 + n = (d^2 - 1) + (n + 1)
+    \]
+    is divisible by \(24\), as required.
+\end{soln}
+
+\end{document}
